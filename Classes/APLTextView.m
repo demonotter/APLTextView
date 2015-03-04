@@ -68,7 +68,7 @@
     [self sendSubviewToBack:self.backgroundView];
     
     CGFloat leftMargin = 8.;
-    CGFloat topMargin = 8.;
+    CGFloat topMargin = 0.0;
     self.placeholderLabel.frame = CGRectMake(leftMargin + self.contentInset.left, topMargin + self.contentInset.top, self.frame.size.width - - leftMargin * 2 - self.contentInset.left - self.contentInset.right, self.frame.size.height - topMargin - self.contentInset.top - self.contentInset.bottom);
     self.placeholderLabel.font = self.font;
     self.placeholderLabel.backgroundColor = [UIColor clearColor];
@@ -85,7 +85,7 @@
     CGFloat counterLabelBottom = -3;
     /*self.counterLabel.frame = CGRectMake(self.frame.size.width - counterLabelWidth - counterLabelRight - self.contentInset.right, self.contentOffset.y + self.frame.size.height - self.contentInset.bottom - counterLabelHeight - counterLabelBottom, counterLabelWidth, counterLabelHeight);*/
     self.counterLabel.frame = CGRectMake(self.frame.size.width - counterLabelWidth - counterLabelRight - self.contentInset.right,
-                                         self.frame.size.height - self.contentInset.bottom - counterLabelBottom, counterLabelWidth, counterLabelHeight);
+                                         self.frame.size.height - 17 - counterLabelBottom, counterLabelWidth, counterLabelHeight);
     self.counterLabel.font = self.font;
     self.counterLabel.backgroundColor = [UIColor clearColor];
     self.counterLabel.textColor = [UIColor lightGrayColor];
@@ -116,7 +116,7 @@
     _maxCharacters = maxCharacters;
     [self setCounterText:maxCharacters - [self.text length]];
     self.counterLabel.hidden = ![self hasCounter];
-    self.contentInset = UIEdgeInsetsMake(0., 0., [self hasCounter] ? 17. : 0., 0.);
+    //self.contentInset = UIEdgeInsetsMake(0., 0., [self hasCounter] ? 17. : 0., 0.);
 }
 
 #pragma mark - text editing events
